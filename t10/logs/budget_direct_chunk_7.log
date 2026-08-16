@@ -1,0 +1,3 @@
+PARTITION cases=1943 unique=1943 dup=0 cert=1943 cert_unique=1943 cert_dup=0 missing=0 extra=0
+PASS RANGE 1701 1943 states=1001431 attempts=11176818 closures=814332
+SECTOR 15,1 cases=242 max_budget=6 y=17

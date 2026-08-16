@@ -1,0 +1,13 @@
+Independent direct-cycle verifier full reproduction
+Coverage ranges:
+[0,243), [243,486), [486,729), [729,972), [972,1215), [1215,1458), [1458,1701), [1701,1943)
+Each chunk reported certificate partition: 1943 cases, 1943 unique certificate keys, missing=0, extra=0, duplicates=0.
+Aggregated:
+PASS CASES 1943
+PREFIX_STATES 6448733
+LABEL_ATTEMPTS 67904751
+CLOSURE_CHECKS 4218585
+SECTOR 14,0 CASES 94 MAX_BUDGET 13 y=16
+SECTOR 14,1 CASES 1581 MAX_BUDGET 15 y=17
+SECTOR 15,0 CASES 14 MAX_BUDGET 4 y=16
+SECTOR 15,1 CASES 254 MAX_BUDGET 6 y=17

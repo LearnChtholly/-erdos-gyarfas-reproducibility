@@ -1,0 +1,26 @@
+Key expected output markers
+===========================
+
+case_partition_checker.py:
+  PASS B14E0 cases 94 missing 0 extra 0 duplicates 0
+  PASS B14E1 cases 1581 missing 0 extra 0 duplicates 0
+  PASS B15E0 cases 14 missing 0 extra 0 duplicates 0
+  PASS B15E1 cases 254 missing 0 extra 0 duplicates 0
+  PASS B14E1 D_Q partition empty=1015 nonempty=566
+  PASS TOTAL 1943 UNIQUE 1943
+
+core_set_crosscheck.py:
+  PASS T14 852/852 isomorphism classes matched
+  PASS T15 168/168 isomorphism classes matched
+
+cycle checker:
+  PASS
+  b14 E0: 62 empty D_Q, 32 forest D_Q, max incident quota 7
+  b14 E1: 1015 empty D_Q, 566 forest D_Q, max incident quota 9
+  b15 E0: 14/14 empty D_Q
+  b15 E1: 254/254 empty D_Q
+
+full second implementation grand total:
+  TOTAL CASES 1943 OPTIONS 97345 TRIGGERED_CANDIDATES 31446946 DP_STATES 2119672
+
+All static DAG checker invocations must exit 0 and print PASS.

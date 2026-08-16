@@ -1,0 +1,106 @@
+Erdos-Gyarfas T10: second independent local-option reproduction
+================================================================
+
+Scope
+-----
+No +12/c=11/new bound work was performed.  This audit targets only the last
+machine-completeness layer of T10.
+
+Second implementation
+---------------------
+Source: second_local_option_verifier.cpp
+SHA256: 60d19772ba307baa8fd944b2f7a6bd69ece82d4a6eae9bd819ab0a2c43dc99ac
+
+It does NOT use the original generator's recursive safe_add option-generation
+DFS, memo table, canonical augmentation, old option list for generation, or
+certificate DAG transitions.
+
+For each case it independently:
+  1. recomputes capacities from Q and E/special vertex;
+  2. builds D_Q using an iterative exact-simple-path stack on Q;
+  3. enumerates all capacity-feasible internal label words satisfying the
+     necessary distance-2 D_Q condition, without reading the certificate K;
+  4. for every endpoint pair and triggered word, builds the COMPLETE local
+     lift graph;
+  5. checks every F-edge in that complete graph for an alternative simple
+     path of length 3, 7, or 15 using an iterative stack, hence detecting
+     C4/C8/C16;
+  6. canonicalizes an option as (endpoint_i, endpoint_j, internal_label_word)
+     and compares the complete set with the static certificate;
+  7. discards the certificate DAG and runs a separate memoized exact-cover DP
+     that always chooses the smallest uncovered endpoint.
+
+Relaxation direction
+--------------------
+Every restriction in the second implementation is necessary for a true lift:
+
+* capacity: t_v=d_G(v)-d_Q(v), i.e. 4-d_Q(v), or 5-d_Q(v) for the unique
+  E=1 distinguished vertex;
+* every Q-edge corresponds to one d_F=1 endpoint token and every token belongs
+  to exactly one path component;
+* all internal d_F=2 vertices are exhausted exactly by their B-label quotas;
+* component trigger: otherwise deleting the path component leaves every
+  remaining A-vertex degree 3 and every B-vertex degree at least 3, contradicting
+  vertex-minimality; ordinary degree-4 B needs >=2 incidences, the unique
+  degree-5 B needs >=3;
+* D_Q distance-2 condition: equal labels give C4; a Q simple path of length 2
+  or 6 gives C8 or C16 after subdivision;
+* local C4/C8/C16-freeness is necessary.
+
+The model deliberately ignores some additional true-lift restrictions, notably
+forbidden cycles using multiple path components and larger power-of-two cycles.
+Thus
+    true lift => second-implementation relaxed solution,
+so relaxed UNSAT => true-lift UNSAT.
+
+Full reproduction
+-----------------
+Case partition:
+    b=15,E=0:   14
+    b=15,E=1:  254
+    b=14,E=0:   94
+    b=14,E=1: 1581
+Total: 1943 unique labeled cases; duplicates=0.
+
+Option totals independently regenerated:
+    b=15,E=0:     678
+    b=15,E=1:  11,342
+    b=14,E=0:   5,200
+    b=14,E=1:  80,125
+Total:          97,345
+
+For all 1943 cases:
+    old-only options = 0
+    new-only options = 0
+
+Triggered candidate local components actually subjected to the independent
+complete-local-graph cycle oracle:
+    31,446,946
+
+Independent exact-cover DP states visited using ONLY newly regenerated options:
+    2,119,672
+
+Result:
+    every dangerous case UNSAT.
+
+Full run log
+------------
+second_full_reproduction.log
+SHA256: 7e4e950ae5e810e37edb522bab289f5a837e46dbb6e5fcec16b89c4f40c9d3a9
+
+T10 deduction
+-------------
+From a=4b+E+z-e(Q), e(Q) == z (mod 2), and e(Q)<=2b-8 for b>=14:
+    a >= 2b+E+8+2 ceil(z/2).
+From e(Q)<=2b-9 for b>=16 and parity:
+    a >= 2b+E+10+2 floor(z/2).
+If b>=14 and a<2b+10, the first inequality forces z=0 and E in {0,1};
+the second excludes b>=16.  Hence b in {14,15}, z=0, E in {0,1}, exactly
+the four independently reproduced dangerous sectors.  Their UNSAT therefore
+implies
+    b>=14 => a>=2b+10.
+
+Audit verdict
+-------------
+VALID, relative to the accepted/reproduced fixed-defect and human suppression
+lemmas already audited in the preceding review rounds.

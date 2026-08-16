@@ -1,0 +1,196 @@
+{
+  "case_counts": {
+    "14,0": 94,
+    "14,1": 1581,
+    "15,0": 14,
+    "15,1": 254,
+    "total": 1943
+  },
+  "files": {
+    "EG_T10_note_v1.1.pdf": {
+      "bytes": 249168,
+      "sha256": "ceb314ff9ee7f98f320df7184882430222e4d9817a4c6751e7f4845d74be2846"
+    },
+    "EG_T10_note_v1.1.tex": {
+      "bytes": 18970,
+      "sha256": "8bc0405e47e8d7ede65d041b3d6ef403439390d3e70ffd175b85d117e678708e"
+    },
+    "ENDPOINT_BUDGET_NEAR_TIGHT_REPORT.md": {
+      "bytes": 21232,
+      "sha256": "02e40db045666e651f709d35352b39c05792cefc951619298915f0b923db680f"
+    },
+    "EXPERT_REVIEW_SUMMARY_v1.1.md": {
+      "bytes": 2726,
+      "sha256": "0ff46c77b4afb0d498b29fcc952a8996deed6a29d45cedef12517ffc90f29132"
+    },
+    "README.md": {
+      "bytes": 1865,
+      "sha256": "21e234247dd3ef66bac1f9deb16e198c08547a1a9c41ceddef4775c92d8342e6"
+    },
+    "THEOREM_STATEMENT_v1.1.md": {
+      "bytes": 686,
+      "sha256": "ababc6863c966b272d92227814f9d4a2da33ea10341c9ee1e332c95b48224e9e"
+    },
+    "VALIDATION_REPORT_v1.1.md": {
+      "bytes": 3935,
+      "sha256": "d45179d9fad923aeb84b8b243f6a211d8c955735b9b9718c0f9fad02e2610638"
+    },
+    "eg_T10_cycle_checker.py": {
+      "bytes": 3020,
+      "sha256": "8e57abd51d70ba847fea635a8e36f5cbe600bab983f1d97163b73bd5271029b4"
+    },
+    "eg_fixed_defect_closure_checker.py": {
+      "bytes": 6496,
+      "sha256": "16ab60f3e0521812966fb9489c74babf5d62e945a88588aae2651ccd01cd4cb9"
+    },
+    "eg_fixed_defect_reps.json": {
+      "bytes": 920575,
+      "sha256": "a56353061de4f8a896e151439cd7335402e8fdf4d9749dc7b26fdee5acf2237c"
+    },
+    "eg_suppression_certificate_checker.py": {
+      "bytes": 4225,
+      "sha256": "69ab91df940c52921ecf59735ec96f6c932cac90ba839718a111ba8c1691765f"
+    },
+    "eg_suppression_core_data.json": {
+      "bytes": 6212815,
+      "sha256": "e5f06b9b4ab0c59c361c190db4639f199844b93f27e0ed358aa455ce1706feb8"
+    },
+    "endpoint_budget_certificate.csv": {
+      "bytes": 114622,
+      "sha256": "a71dca5a70bacea3c52afe7e7e9ba797a5fa1048773f16db62364014c6e38c65"
+    },
+    "endpoint_budget_checker.cpp": {
+      "bytes": 5463,
+      "sha256": "f1ea3595cac3db672967e8efcd85f51783c25a5e088044088f2cbfb8c25769b8"
+    },
+    "endpoint_budget_neartight_cases.jsonl": {
+      "bytes": 23393,
+      "sha256": "d5f899d81579d22d2014caabcd01e4b60af4865112c10403815008db7e8d655b"
+    },
+    "endpoint_budget_verifier_direct_cycles.cpp": {
+      "bytes": 8817,
+      "sha256": "f69ef898cf1d2862a7eadd900a134494331a1f6c400f5ae63e20c462e4c5c685"
+    },
+    "endpoint_cases.txt": {
+      "bytes": 245116,
+      "sha256": "be0206a01c7a8c7251f598e92dbb583f36f2136e44ba789776d394082ee02775"
+    },
+    "generate_endpoint_cases.py": {
+      "bytes": 1155,
+      "sha256": "f4c3b51372967a91058c33bce3b586c4868d28324391ff944acf3af0a77facc4"
+    },
+    "logs/budget_chunk_1.log": {
+      "bytes": 101,
+      "sha256": "2e4d4ce2d4f11d74274268c76d16ae31abeaa96c74565a3494aeb3aa4033980e"
+    },
+    "logs/budget_chunk_2.log": {
+      "bytes": 103,
+      "sha256": "aa50685585d61feb9ef1adcf702666820e082682360036b41f2f5de43c718f84"
+    },
+    "logs/budget_chunk_3.log": {
+      "bytes": 105,
+      "sha256": "e667f4fb90ffd33e22bc26e8c693618ac3239d5875fa11ad99671ce664c222f0"
+    },
+    "logs/budget_chunk_4.log": {
+      "bytes": 101,
+      "sha256": "0298ee0947e69cb3ae08cc6d50275856944cd538f8d00324e54a6ff925ef1819"
+    },
+    "logs/budget_chunk_5.log": {
+      "bytes": 103,
+      "sha256": "f749185e56a89818985ef0e1eb70fd4f0c457b1c50b942c168d29398134a25b3"
+    },
+    "logs/budget_chunk_6.log": {
+      "bytes": 103,
+      "sha256": "e1e95403597b9b816da89a33e1013742fc17980f9d85ea834b959c8c482391a2"
+    },
+    "logs/budget_chunk_7.log": {
+      "bytes": 104,
+      "sha256": "f37ebd90f4a558a0d1ee2bb9dc61100a2eb385260b227dd60cdceb5afece3b81"
+    },
+    "logs/budget_chunk_8.log": {
+      "bytes": 97,
+      "sha256": "4a328610346e836857ce4a0676eaed80c8959c40f2f88b728e1cddb398c19cd6"
+    },
+    "logs/budget_chunk_9.log": {
+      "bytes": 104,
+      "sha256": "82331bd8b9152e4cf565d838bebcad7361c4639ae81a5817e559171650fd5d54"
+    },
+    "logs/budget_direct_chunk_0.log": {
+      "bytes": 239,
+      "sha256": "be09dd2e7069093814d78d04e179a7cb99aaae347709dc5361da7f3ec8b306ec"
+    },
+    "logs/budget_direct_chunk_1.log": {
+      "bytes": 202,
+      "sha256": "736ad0f6d37bd5133571f46475b5856b0ce65764a16d2da1e88e642af59c4d5a"
+    },
+    "logs/budget_direct_chunk_2.log": {
+      "bytes": 202,
+      "sha256": "57dc37a6a5c15d1b1c7a06a50455a2be893f0bbd015430e27a5a2b1d245dcb62"
+    },
+    "logs/budget_direct_chunk_3.log": {
+      "bytes": 202,
+      "sha256": "f38891099225db489fb6ebcfba534211d6254546606e879e025d55e2060f1c94"
+    },
+    "logs/budget_direct_chunk_4.log": {
+      "bytes": 203,
+      "sha256": "93dfed52b389969d0b34c465b2adc88bf9325290f09093fa95fe6c0f384ce48b"
+    },
+    "logs/budget_direct_chunk_5.log": {
+      "bytes": 204,
+      "sha256": "fcdafe7985752d1992a51eed23aef27525d652bd7ed7319b90fb01d28b4305df"
+    },
+    "logs/budget_direct_chunk_6.log": {
+      "bytes": 282,
+      "sha256": "fa7e83772d31738f5343b8141018bf03c38435be573e7f0620fc7f79d4add53a"
+    },
+    "logs/budget_direct_chunk_7.log": {
+      "bytes": 205,
+      "sha256": "5d9cbe6b43806c8a06aab61e68355a6e7f618230c8108a0268abbb7b8e0d5068"
+    },
+    "logs/direct_cycle_full_summary.log": {
+      "bytes": 538,
+      "sha256": "9f5ef602211b96657b2dfedce852070e3ecfc923a8b65dde8a198e43b54c3e3b"
+    },
+    "logs/endpoint_budget_neartight_witness.log": {
+      "bytes": 3666,
+      "sha256": "26302d35b398ba2cb7aced8e250a824adec1c41bd85b7e102f5979e679c9e560"
+    },
+    "logs/endpoint_case_comparison.log": {
+      "bytes": 139,
+      "sha256": "75777afc28c6bdff7c323e106f5d4ecdd90594db28364dc68aad5a29b8dc1e1a"
+    },
+    "logs/endpoint_case_generation.log": {
+      "bytes": 74,
+      "sha256": "7b7200662b150276b06a32c60217b9366bedf8f16d12ca5c8acc069514e35cfb"
+    },
+    "logs/first_budget_full_summary.log": {
+      "bytes": 319,
+      "sha256": "c28d7e9791db7c4d39b61d8fd7d74d5510b6dad901a70d60504a19bfbc6c1303"
+    },
+    "reproduce_v1_1.sh": {
+      "bytes": 976,
+      "sha256": "60e733ebafcd24394875ecab06be190e5eec554e5abc7c01ce1ab8b398cc1bf1"
+    },
+    "supplementary/EG-T10-proof-v1.0.tar.gz": {
+      "bytes": 1277244,
+      "sha256": "edb0d7156f61a67b000dcb7543050259c0c3090f7d58806fbcf623ec389b8ad6"
+    },
+    "supplementary/endpoint_capacity_checker.cpp": {
+      "bytes": 4700,
+      "sha256": "07c5bdfd8c30ea98357be5c9cf5c07c937e4034b3313df40574dbce62e04cbcf"
+    }
+  },
+  "max_budget_sum": {
+    "14,0": 13,
+    "14,1": 15,
+    "15,0": 4,
+    "15,1": 6
+  },
+  "proof_status": "VALID SIMPLIFICATION (internal adversarial verification)",
+  "release": "EG-T10-proof-v1.1",
+  "required_y": {
+    "E=0": 16,
+    "E=1": 17
+  },
+  "theorem": "For a lexicographically minimal Erdos-Gyarfas counterexample, b>=14 implies a>=2b+10."
+}

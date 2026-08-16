@@ -1,0 +1,64 @@
+T10 relaxation-direction audit
+==============================
+
+Claim to certify:
+    true suppression lift => solution of the exact-cover relaxation.
+
+For a dangerous sector (b,E,z=0), after the independent cycle-elimination
+lemma, F=G[A] is a disjoint union of path components.
+
+The relaxation enforces the following constraints.
+
+1. Suppression core Q
+   NECESSARY.
+   Q is one of the independently reconstructed extremal representatives.
+
+2. Endpoint tokens
+   NECESSARY.
+   Every edge of Q corresponds to exactly one A-vertex having d_F=1.
+   Each such endpoint token is used in exactly one path component.
+
+3. Internal-label quotas
+   NECESSARY AND EXACT.
+   For v in B,
+       t_v = 4 + epsilon_v - d_Q(v).
+   E=0 has epsilon_v=0 for all v.
+   E=1 has one distinguished degree-5 vertex with epsilon_v=1.
+
+4. Path decomposition
+   NECESSARY after cycle elimination.
+   Since z=0, every A-vertex has F-degree 1 or 2.
+   With cycle components excluded independently, all components are paths.
+
+5. Component trigger
+   NECESSARY from minimality.
+   Each path component must remove at least d_G(v)-2 neighbors from some
+   B-vertex v if that component is deleted:
+       ordinary degree-4 v: at least 2 occurrences;
+       distinguished degree-5 v: at least 3 occurrences.
+
+6. Local C4/C8/C16 legality of a path template
+   NECESSARY.
+   A true lift cannot contain a forbidden cycle wholly inside the fixed
+   subdivided-Q incidence graph plus one path component.
+
+7. Internal-word length bound K in nonempty-D_Q cases
+   NECESSARY, not heuristic.
+   Internal labels at F-distance 2 must form edges in D_Q; the checker
+   independently maximizes such a word subject to the exact label quotas.
+
+8. Endpoint exact cover and quota exact cover
+   NECESSARY.
+   All endpoint vertices and all internal A-vertices must belong to exactly
+   one path component.
+
+Constraints intentionally OMITTED by the relaxation:
+   - forbidden cycles using two or more different path components;
+   - C32 and larger local/cross-component constraints when not needed;
+   - additional global minimal-counterexample constraints beyond the trigger.
+
+These omissions enlarge the feasible set. Therefore the implemented model is
+a genuine relaxation:
+       true lift => relaxed exact-cover solution.
+Hence:
+       relaxed exact-cover UNSAT => true lift UNSAT.

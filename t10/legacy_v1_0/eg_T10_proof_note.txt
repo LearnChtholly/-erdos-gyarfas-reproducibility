@@ -1,0 +1,91 @@
+
+Erdos-Gyarfas suppression theorem candidate T10
+================================================
+
+Setting
+-------
+Let G be a counterexample to the Erdos-Gyarfas conjecture, chosen first with
+minimum |V(G)| and then with minimum |E(G)|. Let
+
+    A = V_3(G),   B = V_{>=4}(G),
+    a = |A|,      b = |B|,
+    E = sum_{v in B}(d_G(v)-4),
+    z = #{u in A : d_{G[A]}(u)=3}.
+
+Accepted structural input from Carr:
+(1) B is independent.
+(2) Every vertex has a degree-3 neighbor.
+(3) Every proper subgraph has minimum degree at most 2.
+
+Suppression graph
+-----------------
+For every u in A with d_{G[A]}(u)=1, suppress the B-u-B path to one edge.
+The resulting graph Q on B is simple and 2-degenerate. Moreover, any
+2^k-cycle in Q lifts to a 2^{k+1}-cycle in G, so Q is relevant
+power-of-two-cycle-free.
+
+Exact identity
+--------------
+Let x,y,z denote the numbers of A-vertices with d_{G[A]} equal to 1,2,3.
+Since B is independent,
+
+    2x+y = 4b+E,
+
+and
+
+    a=x+y+z.
+
+Since e(Q)=x,
+
+    a = 4b+E+z-e(Q).
+
+Also x+z is even by the handshake lemma in G[A], hence
+
+    e(Q) ≡ z (mod 2).
+
+Finite extremal input
+---------------------
+Certified computation gives
+
+    e(Q) <= 2b-8   for b>=14,
+    e(Q) <= 2b-9   for b>=16.
+
+Therefore
+
+    a >= 2b+E+8+2 ceil(z/2)       (b>=14),
+
+and
+
+    a >= 2b+E+10+2 floor(z/2)      (b>=16).
+
+Dangerous sectors for T10
+-------------------------
+To violate a>=2b+10 when b>=14, one must have b in {14,15}, z=0,
+and E in {0,1}. In these sectors G[A] is a union of paths and cycles.
+
+The four sectors
+----------------
+(14,0), (14,1), (15,0), (15,1)
+
+have been reduced to finite suppression-lift searches over the certified
+(14,20) and (15,22) suppression cores. Component-trigger constraints from
+minimality and exact C4/C8/C16 local cycle oracles eliminate all cases.
+
+Candidate conclusion
+--------------------
+If G is a vertex-minimal, then edge-minimal Erdos-Gyarfas counterexample and
+b=|V_{>=4}(G)|>=14, then
+
+    a=|V_3(G)| >= 2b+10.
+
+Equivalently,
+
+    |V_3(G)| >= ceil((2|V(G)|+10)/3)
+
+whenever |V_{>=4}(G)|>=14.
+
+Proof status
+------------
+The algebraic/suppression part is human-readable. The fixed-defect bounds and
+danger-sector eliminations are computer-assisted and should be checked from
+the attached independent verifiers before publication claims.

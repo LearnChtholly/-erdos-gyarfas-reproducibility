@@ -1,0 +1,7 @@
+Frozen assembly environment
+Python: 3.13.5
+Platform: Linux-6.18.35-x86_64-with-glibc2.41
+Machine: x86_64
+NetworkX: 3.6.1
+C++ standard required: C++17
+Compiler used during internal reproduction: g++ 14.2.0
