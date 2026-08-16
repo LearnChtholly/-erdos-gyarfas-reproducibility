@@ -1,9 +1,9 @@
-[Uploading README(3).md…]()
+[Uploading README(4).md…]()
 # Erdős–Gyárfás Reproducibility
 
 Reproducibility code, certificates, and computer-assisted structural results concerning minimal counterexamples to the Erdős–Gyárfás conjecture.
 
-> **Status.** These results have been internally adversarially reviewed and independently reproduced. External human review is ongoing.  
+> **Status.** This repository contains **AI-assisted, computer-assisted candidate results**. The proof packages have undergone multiple AI-assisted adversarial checks, reruns, and separately implemented verification routes, but the human maintainer has **not independently reconstructed all mathematical arguments or personally reproduced all computations locally**. Independent human expert verification is being sought.  
 > This repository does **not** claim a proof of the Erdős–Gyárfás conjecture, and no priority claim is made here.
 
 ---
@@ -64,7 +64,7 @@ The corresponding code and certificates are under:
 universal8/
 ```
 
-This result should presently be regarded as a **computer-assisted theorem candidate undergoing external review**.
+This result should presently be regarded as an **AI-assisted, computer-assisted theorem candidate pending independent human verification**.
 
 ---
 
@@ -294,19 +294,29 @@ Please consult the README or reproduction instructions inside each proof directo
 The intended status terminology in this repository is:
 
 - **frozen**: the corresponding proof package is versioned and should not be silently modified;
-- **internally validated**: the mathematical reduction, certificate logic, and reproduction code have undergone adversarial internal review and independent reruns;
-- **external review ongoing**: independent human expert review has not yet been completed;
+- **AI-assisted internally checked**: the mathematical reduction, certificate logic, and reproduction code have undergone multiple AI-assisted adversarial reviews, reruns, and separately implemented checks;
+- **independent human verification pending**: the human maintainer has not independently reconstructed all arguments or personally reproduced all computations locally, and independent expert review has not yet been completed;
 - **no priority claim**: absence of a located predecessor is not treated as proof of novelty.
 
 In particular:
 
 - **T10 v1.1** is the current frozen main T10 proof package;
 - **T10 v1.0** is retained unchanged as supplementary independent verification;
-- **Universal \(+8\)** has passed internal adversarial review but is still being presented conservatively pending external human review and literature/priority checking.
+- **Universal \(+8\)** has passed multiple AI-assisted internal checks but is still being presented conservatively pending independent human verification and literature/priority checking.
 
 ---
 
-## 8. What is not claimed
+## 8. AI assistance and verification status
+
+AI systems, including large language models used as research and coding assistants, played a central role in the mathematical exploration, proof development, finite-search and certificate design, verification-code generation and refactoring, adversarial checking, alternative implementations, computational reruns, and preparation of the manuscript and documentation.
+
+The human maintainer selected the problem, provided high-level direction, chose which outputs to preserve and release, and is responsible for accurately disclosing the status of the project. At the time of this release, the human maintainer has **not independently reconstructed all mathematical arguments and has not personally reproduced all computations in a local environment**.
+
+Accordingly, the mathematical statements in this repository should be treated as **AI-assisted, computer-assisted candidate results pending independent human verification**. The code, certificates, frozen inputs, hashes, and reproduction instructions are public specifically so that external reviewers can check the claims without trusting the AI systems that helped generate them.
+
+---
+
+## 9. What is not claimed
 
 This repository does **not** claim that the Erdős–Gyárfás conjecture has been solved.
 
@@ -316,7 +326,7 @@ The repository also does not currently claim priority for the structural inequal
 
 ---
 
-## 9. External review
+## 10. External review
 
 External reviewers are particularly invited to examine:
 
@@ -331,7 +341,7 @@ Bug reports, counterexamples, reproduction failures, and references to prior wor
 
 ---
 
-## 10. Citation and archival status
+## 11. Citation and archival status
 
 A formal citation entry will be added once the external-review and archival status is settled.
 
@@ -346,7 +356,7 @@ universal8-review-v0.1
 
 ---
 
-## 11. License
+## 12. License
 
 See `LICENSE`.
 
