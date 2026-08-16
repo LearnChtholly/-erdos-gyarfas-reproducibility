@@ -1,4 +1,3 @@
-[README(5).md](https://github.com/user-attachments/files/31119925/README.5.md)
 # Erdős–Gyárfás Reproducibility
 
 Reproducibility code, certificates, and computer-assisted structural candidate results concerning hypothetical minimal counterexamples to the Erdős–Gyárfás conjecture.
