@@ -1,0 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;struct E{int u,v;};vector<int>st={0,1,2,3,4,4,4,5,5,5};vector<E>ed;long long pairs=0,a8=0,a9=0,v8=0,v9=0;
+bool check(vector<int>&k,int y){int n=6+y,nxt=6;vector<set<int>>A(n);vector<int>ys;auto ae=[&](int u,int v){if(u==v||A[u].count(v))return false;A[u].insert(v);A[v].insert(u);return true;};for(int i=0;i<5;i++){int p=ed[i].u,q=ed[i].v,prev=p;for(int j=0;j<k[i];j++){int w=nxt++;ys.push_back(w);if(!ae(prev,w))return false;prev=w;}if(!ae(prev,q))return false;}if(nxt!=n)return false;for(int i=0;i<(int)ys.size();i++)for(int j=i+1;j<(int)ys.size();j++)for(int w:A[ys[i]])if(A[ys[j]].count(w))return false;return true;}
+void asg(int p,int left,int target,vector<int>&k){if(p==5){if(left)return;(target==8?a8:a9)++;if(check(k,target)){(target==8?v8:v9)++;cout<<"VALID y="<<target<<"\n";}return;}for(int x=0;x<=2&&x<=left;x++){k[p]=x;asg(p+1,left-x,target,k);}}
+void rec(vector<int>v){if(v.empty()){pairs++;vector<int>k(5);asg(0,8,8,k);asg(0,9,9,k);return;}int a=v[0];for(int i=1;i<(int)v.size();i++){int b=v[i];vector<int>n;for(int j=1;j<(int)v.size();j++)if(j!=i)n.push_back(v[j]);ed.push_back({a,b});rec(n);ed.pop_back();}}
+int main(){rec(st);cerr<<"pairings="<<pairs<<" a8="<<a8<<" v8="<<v8<<" a9="<<a9<<" v9="<<v9<<"\n";}

@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;using U=uint64_t;
+struct Case{int B,E,sp,idx;string core;vector<pair<int,int>>ed;};
+static void add(vector<U>&a,int u,int v){a[u]|=1ULL<<v;a[v]|=1ULL<<u;}static void del(vector<U>&a,int u,int v){a[u]&=~(1ULL<<v);a[v]&=~(1ULL<<u);}
+static bool exact_path(const vector<U>&a,int s,int t,int L){struct S{int v,d;U used;};vector<S>st{{s,0,1ULL<<s}};while(!st.empty()){auto q=st.back();st.pop_back();if(q.d==L){if(q.v==t)return true;continue;}U c=a[q.v]&~q.used;if(q.d<L-1)c&=~(1ULL<<t);while(c){U b=c&-c;c-=b;int w=__builtin_ctzll(b);st.push_back({w,q.d+1,q.used|b});}}return false;}
+// Check whether adding edge uv closes a forbidden cycle. Edge uv must be present.
+static bool edge_bad(vector<U>&g,int u,int v){del(g,u,v);bool r=exact_path(g,u,v,3)||exact_path(g,u,v,7)||exact_path(g,u,v,15);add(g,u,v);return r;}
+static vector<Case> readcases(const string&p){ifstream in(p);string l;getline(in,l);vector<Case>o;int idx=0;while(getline(in,l)){if(l=="END")break;if(l.empty())continue;istringstream ss(l);string t;Case c;ss>>t>>c.B>>c.E>>c.core>>c.sp;getline(in,l);istringstream es(l);es>>t;string x;while(es>>x){auto z=x.find(',');c.ed.push_back({stoi(x.substr(0,z)),stoi(x.substr(z+1))});}getline(in,l);c.idx=idx++;o.push_back(c);}return o;}
+static uint32_t pack(const array<uint8_t,8>&c){uint32_t x=0;for(int i=0;i<8;i++)x|=(uint32_t)c[i]<<(3*i);return x;}
+struct KS{uint16_t mask;uint32_t rem;bool operator==(KS const&o)const{return mask==o.mask&&rem==o.rem;}};struct HH{size_t operator()(KS const&s)const{return ((uint64_t)s.mask<<32)^s.rem;}};
+int main(int argc,char**argv){auto cs=readcases(argv[1]);set<int>S;ifstream sf(argv[2]);int q;while(sf>>q)S.insert(q);int sat=0,unsat=0;long long topts=0,tstates=0;
+ for(auto&C:cs){if(!S.count(C.idx))continue;int B=C.B,EP=C.ed.size(),d=2*B-EP,y=2*d+C.E,base=B+EP;vector<int>deg(B);for(auto [u,v]:C.ed)deg[u]++,deg[v]++;array<int,8>cap{};for(int v=0;v<B;v++)cap[v]=4+((C.E&&v==C.sp)?1:0)-deg[v];vector<U>g(base+y);for(int e=0;e<EP;e++){add(g,B+e,C.ed[e].first);add(g,B+e,C.ed[e].second);} // verify base
+ bool basebad=false;for(int u=0;u<base;u++){U cc=g[u];while(cc){U bit=cc&-cc;cc-=bit;int v=__builtin_ctzll(bit);if(u<v&&edge_bad(g,u,v)){basebad=true;break;}}if(basebad)break;}if(basebad){cerr<<"BASEBAD "<<C.idx<<"\n";return 3;}
+ vector<vector<vector<array<uint8_t,8>>>> pc(EP,vector<vector<array<uint8_t,8>>>(EP));
+ // r=0 direct edge
+ for(int i=0;i<EP;i++)for(int j=i+1;j<EP;j++){add(g,B+i,B+j);bool ok=!edge_bad(g,B+i,B+j);del(g,B+i,B+j);if(ok){array<uint8_t,8>z{};pc[i][j].push_back(z);}}
+ vector<int>rem(B);for(int v=0;v<B;v++)rem[v]=cap[v];array<uint8_t,8>cnt{};
+ for(int i=0;i<EP;i++)for(int j=i+1;j<EP;j++){set<uint32_t>seen;int st=B+i,tg=B+j;function<void(int)>rec=[&](int dep){if(dep>=y)return;int prev=dep?base+dep-1:st,node=base+dep;for(int lab=0;lab<B;lab++)if(rem[lab]){add(g,node,lab);add(g,prev,node);rem[lab]--;cnt[lab]++;bool ok=!edge_bad(g,prev,node);if(ok){add(g,node,tg);bool closeok=!edge_bad(g,node,tg);del(g,node,tg);if(closeok&&seen.insert(pack(cnt)).second)pc[i][j].push_back(cnt);rec(dep+1);}cnt[lab]--;rem[lab]++;del(g,prev,node);del(g,node,lab);}};rec(0);}
+ long long opts=0;for(int i=0;i<EP;i++)for(int j=i+1;j<EP;j++)opts+=pc[i][j].size();topts+=opts;auto packrem=[&](array<int,8>r){uint32_t x=0;for(int v=0;v<8;v++)x|=(uint32_t)r[v]<<(3*v);return x;};array<int,8>ini{};for(int v=0;v<8;v++)ini[v]=cap[v];uint32_t ir=packrem(ini);unordered_set<KS,HH>dead;long long states=0;function<bool(uint16_t,uint32_t)>dfs=[&](uint16_t mask,uint32_t rp){states++;if(mask==(1u<<EP)-1)return rp==0;KS ks{mask,rp};if(dead.count(ks))return false;int i=0;while(mask>>i&1)i++;uint16_t rest=mask|(1u<<i);for(int j=i+1;j<EP;j++)if(!(mask>>j&1)){for(auto &c:pc[i][j]){uint32_t nr=rp;bool ok=1;for(int v=0;v<8;v++){int rv=(nr>>(3*v))&7;if(c[v]>rv){ok=0;break;}nr-=((uint32_t)c[v])<<(3*v);}if(ok&&dfs(rest|(1u<<j),nr))return true;}}dead.insert(ks);return false;};bool yes=dfs(0,ir);tstates+=states;if(yes){sat++;cout<<"SAT ";}else{unsat++;cout<<"UNSAT ";}cout<<C.idx<<" "<<C.core<<" E="<<C.E<<" sp="<<C.sp<<" opts="<<opts<<" states="<<states<<"\n";}
+ cerr<<"SUMMARY sat="<<sat<<" unsat="<<unsat<<" opts="<<topts<<" states="<<tstates<<"\n";
+}

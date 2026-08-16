@@ -1,0 +1,15 @@
+GLOBAL_UNSAT idx=0 D5_B4_A0000 E=0 sp=-1 paths=9 tripods=0 lollipops=3 cycles=0 gstates=3 lchecks=5387 gchecks=21 lnodes=481
+GLOBAL_UNSAT idx=1 D5_B4_A0000 E=1 sp=0 paths=9 tripods=0 lollipops=3 cycles=0 gstates=3 lchecks=5529 gchecks=21 lnodes=526
+GLOBAL_UNSAT idx=2 D5_B4_A0000 E=1 sp=1 paths=9 tripods=0 lollipops=3 cycles=0 gstates=3 lchecks=5752 gchecks=21 lnodes=526
+GLOBAL_UNSAT idx=3 D5_B4_A0000 E=1 sp=2 paths=9 tripods=0 lollipops=3 cycles=0 gstates=3 lchecks=5760 gchecks=21 lnodes=527
+GLOBAL_UNSAT idx=4 D5_B4_A0000 E=1 sp=3 paths=9 tripods=0 lollipops=3 cycles=0 gstates=3 lchecks=5794 gchecks=21 lnodes=529
+GLOBAL_UNSAT idx=5 D5_B4_A0001 E=0 sp=-1 paths=27 tripods=0 lollipops=0 cycles=0 gstates=0 lchecks=2607 gchecks=0 lnodes=273
+GLOBAL_UNSAT idx=6 D5_B4_A0001 E=1 sp=0 paths=27 tripods=0 lollipops=0 cycles=0 gstates=0 lchecks=2660 gchecks=0 lnodes=293
+GLOBAL_UNSAT idx=7 D5_B4_A0001 E=1 sp=1 paths=27 tripods=0 lollipops=0 cycles=0 gstates=0 lchecks=2660 gchecks=0 lnodes=293
+GLOBAL_UNSAT idx=8 D5_B4_A0001 E=1 sp=2 paths=27 tripods=0 lollipops=0 cycles=0 gstates=0 lchecks=2660 gchecks=0 lnodes=293
+GLOBAL_UNSAT idx=9 D5_B4_A0001 E=1 sp=3 paths=27 tripods=0 lollipops=0 cycles=0 gstates=0 lchecks=6431 gchecks=0 lnodes=659
+GLOBAL_UNSAT idx=10 D5_B4_A0002 E=0 sp=-1 paths=10 tripods=0 lollipops=1 cycles=0 gstates=1 lchecks=9389 gchecks=10 lnodes=778
+GLOBAL_UNSAT idx=11 D5_B4_A0002 E=1 sp=0 paths=10 tripods=0 lollipops=1 cycles=0 gstates=1 lchecks=11545 gchecks=10 lnodes=1019
+GLOBAL_UNSAT idx=12 D5_B4_A0002 E=1 sp=1 paths=10 tripods=0 lollipops=1 cycles=0 gstates=1 lchecks=11299 gchecks=10 lnodes=925
+GLOBAL_UNSAT idx=13 D5_B4_A0002 E=1 sp=2 paths=10 tripods=0 lollipops=1 cycles=0 gstates=1 lchecks=9949 gchecks=10 lnodes=882
+GLOBAL_UNSAT idx=14 D5_B4_A0002 E=1 sp=3 paths=10 tripods=0 lollipops=1 cycles=0 gstates=1 lchecks=9927 gchecks=10 lnodes=882

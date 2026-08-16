@@ -1,0 +1,10 @@
+GLOBAL_UNSAT idx=0 D6_B4_A0000 E=0 sp=-1 pathWords=15 cycleWords=2 states=16 cstates=17 edgeChecks=95 localNodes=1430
+GLOBAL_UNSAT idx=1 D6_B4_A0000 E=1 sp=0 pathWords=15 cycleWords=2 states=16 cstates=17 edgeChecks=95 localNodes=1603
+GLOBAL_UNSAT idx=2 D6_B4_A0000 E=1 sp=1 pathWords=15 cycleWords=2 states=16 cstates=17 edgeChecks=95 localNodes=1603
+GLOBAL_UNSAT idx=3 D6_B4_A0000 E=1 sp=2 pathWords=15 cycleWords=2 states=16 cstates=17 edgeChecks=95 localNodes=1603
+GLOBAL_UNSAT idx=4 D6_B4_A0000 E=1 sp=3 pathWords=15 cycleWords=2 states=16 cstates=17 edgeChecks=99 localNodes=1843
+GLOBAL_UNSAT idx=5 D6_B4_A0001 E=0 sp=-1 pathWords=9 cycleWords=4 states=10 cstates=12 edgeChecks=87 localNodes=2617
+GLOBAL_UNSAT idx=6 D6_B4_A0001 E=1 sp=0 pathWords=9 cycleWords=4 states=10 cstates=12 edgeChecks=87 localNodes=3056
+GLOBAL_UNSAT idx=7 D6_B4_A0001 E=1 sp=1 pathWords=9 cycleWords=4 states=10 cstates=12 edgeChecks=87 localNodes=2978
+GLOBAL_UNSAT idx=8 D6_B4_A0001 E=1 sp=2 pathWords=9 cycleWords=4 states=10 cstates=12 edgeChecks=87 localNodes=2981
+GLOBAL_UNSAT idx=9 D6_B4_A0001 E=1 sp=3 pathWords=9 cycleWords=4 states=10 cstates=12 edgeChecks=87 localNodes=2981

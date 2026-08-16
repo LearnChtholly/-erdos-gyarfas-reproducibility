@@ -1,0 +1,57 @@
+b=4 d=5: cores=3 E0=3 E1=12 total=15
+b=4 d=6: cores=2 E0=2 E1=8 total=10
+b=5 d=5: cores=4 E0=4 E1=20 total=24
+b=5 d=6: cores=5 E0=5 E1=25 total=30
+b=6 d=5: cores=4 E0=3 E1=19 total=22
+b=6 d=6: cores=11 E0=10 E1=61 total=71
+b=7 d=5: cores=5 E0=4 E1=28 total=32
+b=7 d=6: cores=17 E0=14 E1=100 total=114
+q(4)=4
+q(5)=6
+q(6)=7
+q(7)=9
+PASS atlas regeneration
+pairings=945 a8=14175 v8=0 a9=4725 v9=0
+pairings=10395 assign8=935550 valid8=0 assign9=519750 valid9=0
+b4_d5_alt.log SAT 0 UNSAT 15
+b4_d5_direct.log SAT 0 UNSAT 15
+b4_d6_alt.log SAT 0 UNSAT 10
+b4_d6_direct.log SAT 0 UNSAT 10
+b5_d5_alt.log SAT 0 UNSAT 24
+b5_d5_direct.log SAT 0 UNSAT 24
+b5_d6_alt.log SAT 0 UNSAT 30
+b5_d6_direct.log SAT 0 UNSAT 30
+b6_d5_alt.log SAT 0 UNSAT 22
+b6_d5_direct.log SAT 0 UNSAT 22
+b6_d6_alt.log SAT 0 UNSAT 71
+b6_d6_direct.log SAT 0 UNSAT 71
+b7_d5_alt.log SAT 0 UNSAT 32
+b7_d5_direct.log SAT 0 UNSAT 32
+b7_d6_alt.log SAT 0 UNSAT 114
+b7_d6_direct.log SAT 0 UNSAT 114
+PASS small-b dual implementation
+The b>=8 dependency is separately self-contained:
+  EG-B8plus8-candidate-audit-v0.2.tar.gz
+PASS Universal8 small-b reproduction
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
