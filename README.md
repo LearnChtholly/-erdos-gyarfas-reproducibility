@@ -1,10 +1,12 @@
-[Uploading README(4).md…]()
+[README(5).md](https://github.com/user-attachments/files/31119925/README.5.md)
 # Erdős–Gyárfás Reproducibility
 
-Reproducibility code, certificates, and computer-assisted structural results concerning minimal counterexamples to the Erdős–Gyárfás conjecture.
+Reproducibility code, certificates, and computer-assisted structural candidate results concerning hypothetical minimal counterexamples to the Erdős–Gyárfás conjecture.
 
 > **Status.** This repository contains **AI-assisted, computer-assisted candidate results**. The proof packages have undergone multiple AI-assisted adversarial checks, reruns, and separately implemented verification routes, but the human maintainer has **not independently reconstructed all mathematical arguments or personally reproduced all computations locally**. Independent human expert verification is being sought.  
 > This repository does **not** claim a proof of the Erdős–Gyárfás conjecture, and no priority claim is made here.
+
+The repository is intended primarily as a **code/data/certificate reproducibility companion**. A manuscript may be distributed separately.
 
 ---
 
@@ -30,11 +32,11 @@ The computations and certificates in this repository study structural restrictio
 
 ---
 
-## 2. Main structural results
+## 2. Main candidate structural results
 
 ### Universal additive \(+8\) bound
 
-The strongest result currently represented by the repository is the computer-assisted structural statement
+The strongest candidate statement represented by the repository is
 
 \[
 \boxed{
@@ -50,13 +52,13 @@ a \ge 2b+8.
 }
 \]
 
-The proof is split by the value of \(b\):
+The proof package is split by the value of \(b\):
 
-- \(b \le 3\): follows from the known lower bound on the order of a counterexample;
+- \(b \le 3\): uses a known lower bound on the order of a counterexample;
 - \(4 \le b \le 7\): exhaustive component-topology enumeration with independent local-cycle implementations;
 - \(b=8\): dedicated \(B8+8\) certificates and independent exact-quota / obstruction checks;
 - \(b=9,10\): finite \(P8\) endpoint-budget / matching certificates;
-- \(b\ge11\): follows from a fixed-defect extremal bound for the suppression graph together with parity.
+- \(b\ge11\): fixed-defect suppression-graph bounds together with parity.
 
 The corresponding code and certificates are under:
 
@@ -64,33 +66,27 @@ The corresponding code and certificates are under:
 universal8/
 ```
 
-This result should presently be regarded as an **AI-assisted, computer-assisted theorem candidate pending independent human verification**.
+This statement is presented here as an **AI-assisted, computer-assisted theorem candidate pending independent human verification**.
 
 ---
 
 ### T10
 
-A separately frozen result proves that if
+A separately frozen package contains a computer-assisted candidate proof of the stronger restricted-range statement
 
 \[
-b\ge14,
+b\ge14
+\quad\Longrightarrow\quad
+\boxed{a\ge2b+10}.
 \]
 
-then
-
-\[
-\boxed{
-a\ge2b+10.
-}
-\]
-
-The current main proof is **T10 v1.1**, whose final path-elimination step uses a small endpoint-budget certificate
+The current main package is **T10 v1.1**. Its final path-elimination step uses a small endpoint-budget certificate
 
 \[
 \lambda:E(Q)\to\{0,1,2\}.
 \]
 
-For each dangerous finite case, every locally admissible path with endpoints \(e,f\) and \(r\) internal vertices satisfies
+For each dangerous finite case, every locally admissible path with endpoints \(e,f\) and \(r\) internal vertices is certified to satisfy
 
 \[
 r\le\lambda(e)+\lambda(f),
@@ -104,7 +100,7 @@ while
 
 where \(y\) is the total number of internal degree-two vertices in \(G[V_3]\).
 
-Because every endpoint is used exactly once after cycle components have been eliminated,
+After cycle components have been eliminated, the endpoint tokens are used exactly once across the path decomposition, so the candidate deduction is
 
 \[
 y
@@ -123,7 +119,7 @@ The four dangerous sectors contain
 94+1581+14+254=1943
 \]
 
-labeled cases. The maximum endpoint-budget sums are
+labeled cases. The maximum endpoint-budget sums recorded by the package are
 
 | Sector \((b,E)\) | \(\max \sum_e\lambda(e)\) | \(y\) |
 |---|---:|---:|
@@ -131,12 +127,6 @@ labeled cases. The maximum endpoint-budget sums are
 | \((14,1)\) | 15 | 17 |
 | \((15,0)\) | 4 | 16 |
 | \((15,1)\) | 6 | 17 |
-
-Every case therefore satisfies
-
-\[
-\sum_e\lambda(e)<y.
-\]
 
 The T10 material is under:
 
@@ -146,9 +136,9 @@ t10/
 
 ---
 
-## 3. Suppression graph framework
+## 3. Suppression-graph framework
 
-A recurring object in the proofs is a suppression graph \(Q\) on the high-degree vertices \(B\).
+A recurring object in the candidate proofs is a suppression graph \(Q\) on the high-degree vertices \(B\).
 
 Let \(F=G[A]\), and let
 
@@ -162,37 +152,31 @@ Define the total high-degree excess
 E=\sum_{v\in B}(d_G(v)-4).
 \]
 
-Suppressing every degree-one vertex of \(F\) produces a simple graph \(Q\) on \(B\) with
+The proof packages use the suppression construction to obtain
 
 \[
 e(Q)=x
 \]
 
-and the exact identity
+and the identity
 
 \[
-\boxed{
-a=4b+E+z-e(Q).
-}
+a=4b+E+z-e(Q),
 \]
 
-The handshake lemma in \(F\) also gives
+together with the parity relation
 
 \[
-\boxed{
 e(Q)\equiv z\pmod 2.
-}
 \]
 
-Simple cycles in \(Q\) lift to cycles of twice the length in \(G\), and minimality implies that \(Q\) is 2-degenerate.
-
-These facts reduce structural questions about \(G\) to finite extremal and lifting problems for \(Q\).
+They also use cycle lifting from \(Q\) to \(G\) and 2-degeneracy consequences of minimality. These mathematical interfaces are part of what independent external reviewers are invited to check.
 
 ---
 
 ## 4. Repository layout
 
-A typical layout is:
+The repository is organized approximately as follows:
 
 ```text
 .
@@ -202,7 +186,6 @@ A typical layout is:
 │
 ├── t10/
 │   ├── README.md
-│   ├── EG_T10_note_v1.1.pdf
 │   ├── THEOREM_STATEMENT_v1.1.md
 │   ├── EXPERT_REVIEW_SUMMARY_v1.1.md
 │   ├── VALIDATION_REPORT_v1.1.md
@@ -211,7 +194,7 @@ A typical layout is:
 │   ├── endpoint_budget_checker.cpp
 │   ├── endpoint_budget_verifier_direct_cycles.cpp
 │   ├── generate_endpoint_cases.py
-│   ├── ...
+│   ├── reproduce_v1_1.sh
 │   └── legacy_v1_0/
 │
 └── universal8/
@@ -220,15 +203,13 @@ A typical layout is:
     └── small_b/
 ```
 
-The exact contents may be described in the local README files in each subdirectory.
+The manuscript is not required to be present in this code repository. See the local README files for the exact contents and reproduction commands in each module.
 
 ---
 
-## 5. Independent verification
+## 5. Independent computational cross-checks
 
-A deliberate design goal of this repository is to avoid relying on a single search implementation.
-
-Examples include:
+A design goal of the repository is to avoid relying on a single implementation.
 
 ### T10 v1.1
 
@@ -237,27 +218,27 @@ The endpoint-budget certificates are checked by two separately written local-cyc
 1. an exact-length alternate-path implementation;
 2. a direct simple-cycle implementation enumerating \(C_4,C_8,C_{16}\).
 
-Both cover all 1943 dangerous cases.
+Both are intended to cover all 1943 dangerous cases.
 
-The older frozen T10 v1.0 proof is retained as a substantially different supplementary verification route using:
+The older frozen T10 v1.0 package is retained as a substantially different supplementary verification route using:
 
 - 97,345 local options;
 - static dead-state DAG certificates;
 - an independently generated exact-cover dynamic program.
 
-The v1.0 machinery is **not** logically required by the v1.1 endpoint-budget proof.
+The v1.0 machinery is not intended to be a logical dependency of the v1.1 endpoint-budget deduction.
 
 ### Universal \(+8\)
 
-Different finite ranges use independent reconstruction and verification methods, including:
+Different finite ranges use multiple reconstruction and verification methods, including:
 
 - graph-atlas reconstruction for the small-\(b\) cases;
 - alternate-path and direct-cycle implementations;
-- independent endpoint-budget / charging certificates;
-- independent exact-quota searches;
+- endpoint-budget / charging certificates;
+- exact-quota searches;
 - fixed-defect reconstruction and bootstrapping.
 
-See the subdirectory documentation for the exact dependency chain.
+These are **computational cross-checks**, not a substitute for independent human mathematical review of the reductions connecting the finite computations to the stated candidate theorems.
 
 ---
 
@@ -265,19 +246,19 @@ See the subdirectory documentation for the exact dependency chain.
 
 The repository includes frozen input data, certificates, checkers, and reproduction scripts.
 
-Before reproducing results, verify file integrity:
+To verify the integrity of the repository files against this release:
 
 ```bash
 sha256sum -c SHA256SUMS.txt
 ```
 
-Individual subdirectories may contain their own manifests and reproduction scripts.
+`SHA256SUMS.txt` covers every tracked file in this package except the checksum file itself.
 
 Typical requirements are:
 
 - Python 3;
-- a C++17-compatible compiler;
-- NetworkX for some independent graph-enumeration checks.
+- NetworkX;
+- a C++17-compatible compiler (`g++` was used in the recorded runs).
 
 For C++ programs, a typical compilation command is:
 
@@ -289,30 +270,41 @@ Please consult the README or reproduction instructions inside each proof directo
 
 ---
 
-## 7. Proof status
+## 7. Verification status
 
 The intended status terminology in this repository is:
 
-- **frozen**: the corresponding proof package is versioned and should not be silently modified;
-- **AI-assisted internally checked**: the mathematical reduction, certificate logic, and reproduction code have undergone multiple AI-assisted adversarial reviews, reruns, and separately implemented checks;
+- **frozen**: the corresponding package is versioned and should not be silently modified;
+- **AI-assisted internally checked**: mathematical reductions, certificate logic, and code have undergone multiple AI-assisted adversarial reviews, reruns, and separately implemented checks;
 - **independent human verification pending**: the human maintainer has not independently reconstructed all arguments or personally reproduced all computations locally, and independent expert review has not yet been completed;
-- **no priority claim**: absence of a located predecessor is not treated as proof of novelty.
+- **no priority claim**: failure to locate a predecessor is not treated as proof of novelty.
 
 In particular:
 
-- **T10 v1.1** is the current frozen main T10 proof package;
-- **T10 v1.0** is retained unchanged as supplementary independent verification;
-- **Universal \(+8\)** has passed multiple AI-assisted internal checks but is still being presented conservatively pending independent human verification and literature/priority checking.
+- **T10 v1.1** is the current frozen main T10 candidate-proof package;
+- **T10 v1.0** is retained as supplementary computational cross-checking material;
+- **Universal \(+8\)** has undergone multiple AI-assisted internal checks but is still presented conservatively pending independent human verification and literature/priority checking.
+
+Some archived audit files use phrases such as **“human proof,” “human proof skeleton,” or “human/computer interface.”** In those files, “human” refers to a **human-readable mathematical proof layer**, not to independent authorship or verification by the human maintainer.
 
 ---
 
-## 8. AI assistance and verification status
+## 8. AI assistance and disclosure
 
-AI systems, including large language models used as research and coding assistants, played a central role in the mathematical exploration, proof development, finite-search and certificate design, verification-code generation and refactoring, adversarial checking, alternative implementations, computational reruns, and preparation of the manuscript and documentation.
+AI systems, including large language models used as research and coding assistants, played a central role in:
 
-The human maintainer selected the problem, provided high-level direction, chose which outputs to preserve and release, and is responsible for accurately disclosing the status of the project. At the time of this release, the human maintainer has **not independently reconstructed all mathematical arguments and has not personally reproduced all computations in a local environment**.
+- mathematical exploration and proof development;
+- finite-search and certificate design;
+- verification-code generation and refactoring;
+- adversarial checking and alternative implementations;
+- computational reruns;
+- preparation of manuscript and repository documentation.
 
-Accordingly, the mathematical statements in this repository should be treated as **AI-assisted, computer-assisted candidate results pending independent human verification**. The code, certificates, frozen inputs, hashes, and reproduction instructions are public specifically so that external reviewers can check the claims without trusting the AI systems that helped generate them.
+The human maintainer selected the problem, provided high-level direction, chose which outputs to preserve and release, and is responsible for accurately disclosing the status of the project.
+
+At the time of this release, the human maintainer has **not independently reconstructed all mathematical arguments and has not personally reproduced all computations in a local environment**.
+
+Accordingly, the mathematical statements in this repository should be treated as **AI-assisted, computer-assisted candidate results pending independent human verification**. The code, certificates, frozen inputs, hashes, and reproduction instructions are public specifically so that external reviewers can check the claims without having to trust the AI systems that helped generate them.
 
 ---
 
@@ -320,7 +312,7 @@ Accordingly, the mathematical statements in this repository should be treated as
 
 This repository does **not** claim that the Erdős–Gyárfás conjecture has been solved.
 
-All statements concern the structure of a **hypothetical minimal counterexample**.
+All candidate statements concern the structure of a **hypothetical minimal counterexample**.
 
 The repository also does not currently claim priority for the structural inequalities reported here. Literature searches have been conducted, but external subject-matter expertise is requested before making novelty claims.
 
@@ -341,26 +333,18 @@ Bug reports, counterexamples, reproduction failures, and references to prior wor
 
 ---
 
-## 11. Citation and archival status
+## 11. Citation and release status
 
-A formal citation entry will be added once the external-review and archival status is settled.
+Until a formal archival citation is available, please cite the repository together with the exact Git commit or release tag used.
 
-If you use the code or certificates before then, please cite this repository together with the exact Git commit or release tag used.
-
-Recommended release tags include, for example:
+Useful release tags may include, for example:
 
 ```text
 t10-v1.1
 universal8-review-v0.1
 ```
 
----
-
-## 12. License
-
-See `LICENSE`.
-
-The license applies to the repository code and associated machine-readable data as specified there. Mathematical statements and attribution should follow normal scholarly citation practice.
+No software license is currently asserted by this README. If a `LICENSE` file is added later, that file should be treated as the authoritative license statement.
 
 ---
 
